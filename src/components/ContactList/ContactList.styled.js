@@ -1,4 +1,11 @@
 import styled from 'styled-components';
+import { FaTrashCan } from 'react-icons/fa6';
+export const StyledIcon = styled(FaTrashCan)`
+  color: #f5904d;
+  &:hover {
+    color: #f8731c;
+  }
+`;
 
 export const List = styled.ul`
   list-style-type: none;
@@ -23,18 +30,18 @@ export const ListItemText = styled.div`
 `;
 
 export const DeleteButton = styled.button`
-  background-color: #f5904d;
+  background-color: inherit;
   color: #fff;
   border: none;
-  padding: 8px 16px;
+  /* padding: 8px 12px; */
   font-size: 14px;
   cursor: pointer;
   outline: none;
   border-radius: 4px;
-  box-shadow: rgb(0 0 0 / 20%) 0px 3px 3px -2px,
+  /* box-shadow: rgb(0 0 0 / 20%) 0px 3px 3px -2px,
     rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  /* &:hover {
     background-color: #f8731c;
-  }
+  } */
 `;

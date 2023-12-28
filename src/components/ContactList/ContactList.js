@@ -8,6 +8,7 @@ import { selectContacts } from '../../redux/contactsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from '../../redux/filterSlice';
 import { deleteContact } from '../../redux/operations';
+import { StyledIcon } from './ContactList.styled';
 export const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
@@ -37,8 +38,7 @@ export const ContactList = () => {
             <ListItemText>
               {name} - {number}
             </ListItemText>
-            <DeleteButton onClick={() => handleDelete(id)}>
-              Delete
+            <DeleteButton onClick={() => handleDelete(id)}><StyledIcon size="24"/>
             </DeleteButton>
           </ListItem>
         );

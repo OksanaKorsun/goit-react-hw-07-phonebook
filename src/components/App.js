@@ -11,6 +11,7 @@ import {
 } from '../redux/contactsSlice';
 import { useEffect } from 'react';
 import { fetchContacts } from '../redux/operations';
+import { Loader } from './Loader/Loader';
 export const App = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
@@ -25,7 +26,7 @@ export const App = () => {
       <ContactForm />
       <h2>Contacts</h2>
       <Filter />
-      {isLoading && <p>Loading contacts...</p>}
+      {isLoading && <Loader/>}
       {error && <p>{error}</p>}
       {contacts.length > 0 && <ContactList />}
       <GlobalStyle />
