@@ -16,12 +16,18 @@ export const ContactList = () => {
     if (filter === '') {
       return contacts;
     }
-
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
   const visibleContacts = getVisibleContacts();
+  const handleDelete = async (id) => {
+    try {
+      await dispatch(deleteContact(id));
+    } catch (error) {
+      console.error('Error deleting contact:', error);
+    }
+  };
 
   return (
     <List>
@@ -31,7 +37,7 @@ export const ContactList = () => {
             <ListItemText>
               {name} - {number}
             </ListItemText>
-            <DeleteButton onClick={() => dispatch(deleteContact(id))}>
+            <DeleteButton onClick={() => handleDelete(id)}>
               Delete
             </DeleteButton>
           </ListItem>

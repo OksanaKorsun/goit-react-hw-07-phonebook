@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from '../../redux/contactsSlice';
 import { addContact } from '../../redux/operations';
 import * as Yup from 'yup';
-
 const contactSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, 'Too Short!')
@@ -33,7 +32,12 @@ export const ContactForm = () => {
     );
 
     if (checkContact) {
-      Notify.warning(`${values.name} is already in contacts.`);
+      Notify.warning(`${values.name} is already in contacts.`, {
+        width: '400px',
+        position: 'center-center',
+        timeout: 3000,
+        fontSize: '20px',
+      });
       return;
     }
     dispatch(addContact(values));

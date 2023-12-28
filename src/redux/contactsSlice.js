@@ -40,7 +40,6 @@ export const contactsSlice = createSlice({
       .addCase(deleteContact.rejected, handleRejected);
   },
 });
-// export const { addContact, deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
 
 //Selector
@@ -48,23 +47,3 @@ export const selectContacts = state => state.contacts.items;
 export const selectIsLoading = state => state.contacts.isLoading;
 export const selectError = state => state.contacts.error;
 
-// reducers: {
-//     addContact: {
-//       reducer(state, action) {
-//         state.push(action.payload);
-//       },
-//       prepare(values) {
-//         return {
-//           payload: {
-//             name: values.name,
-//             number: values.number,
-//             id: nanoid(),
-//           },
-//         };
-//       },
-//     },
-//     deleteContact(state, action) {
-//       const index = state.findIndex(contact => contact.id === action.payload);
-//       state.splice(index, 1);
-//     },
-//   },
