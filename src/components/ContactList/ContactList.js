@@ -18,8 +18,7 @@ export const ContactList = () => {
         return (
           <ListItem key={id}>
             <ListItemText>
-              <b>{name}: </b>
-              {number}
+              {name} - {number}
             </ListItemText>
             <DeleteButton onClick={() => dispatch(deleteContact(id))}>
               <StyledIcon size="22px" />
