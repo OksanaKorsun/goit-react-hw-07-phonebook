@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 450px;
+  max-width: 420px;
   margin: 20px auto;
   padding: 20px;
   text-align: center;
@@ -12,4 +12,5 @@ export const Container = styled.div`
   background-color: white;
 `;
 export const Title = styled.h1`
-margin-top: 0;`
+  margin-top: 0;
+`;

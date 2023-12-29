@@ -8,7 +8,7 @@ import {
   ErrorMessage,
 } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from '../../redux/contactsSlice';
+import { selectContacts } from '../../redux/selectors';
 import { addContact } from '../../redux/operations';
 import * as Yup from 'yup';
 const contactSchema = Yup.object().shape({
@@ -35,7 +35,7 @@ export const ContactForm = () => {
       Notify.warning(`${values.name} is already in contacts.`, {
         width: '400px',
         position: 'center-center',
-        timeout: 3000,
+        timeout: 2000,
         fontSize: '20px',
       });
       return;
