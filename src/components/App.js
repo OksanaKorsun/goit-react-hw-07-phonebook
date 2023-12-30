@@ -25,9 +25,9 @@ export const App = () => {
       <Title>Phonebook</Title>
       <ContactForm />
       <h2>Contacts</h2>
-      {isLoading && <Loader />}
+      {isLoading && !error && <Loader />}
       {error && <p>{error}</p>}
-      {contacts.length > 0 ? <Filter /> : <p>You don't have any contacts</p>}
+      {contacts.length > 0 ? <Filter /> : <p>You don't have any contacts!</p>}
       <ContactList />
       <GlobalStyle />
     </Container>
